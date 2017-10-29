@@ -1,0 +1,35 @@
+.top-bar {
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #234B1A;
+}
+
+.sign-in{
+  float: right;
+  color: #F2EAC1;
+}
+
+.sign-in:hover {
+  color: white;
+}
+
+.sign-in:focus {
+  color: #F2EAC1;
+}
+.home {
+  color: #F2EAC1;
+}
+
+.home:hover {
+  color: white;
+}
+
+.home:focus {
+  color: #F2EAC1;
+}
+
+body{
+  background-repeat: no-repeat;
+  background-size: 1440px 600px;
+  background-image: url("http://www.justacoloradogal.com/wp-content/uploads/2014/11/20141011Kebler366.jpg")
+}

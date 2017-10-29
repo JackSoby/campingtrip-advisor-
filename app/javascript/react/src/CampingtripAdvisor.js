@@ -1,8 +1,18 @@
 import React from 'react';
+import NavBar from './containers/NavBar'
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 const CampingtripAdvisor = props => {
   return(
-    <h1>Hello World</h1>
+  <div className='background-image'>
+  <Router>
+    <main>
+      <NavBar/>
+       <Route>
+      </Route>
+    </main>
+    </Router>
+  </div>
   )
 }
 
