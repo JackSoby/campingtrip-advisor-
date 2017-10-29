@@ -1,0 +1,26 @@
+{
+  "name": "campingtrip-advisor",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "^3.0.2",
+    "babel-preset-react": "^6.24.1",
+    "coffeescript": "1.12.7",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.1.0",
+    "jasmine-core": "^2.8.0",
+    "jasmine-enzyme": "^4.0.1",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-cli": "^1.0.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-webpack": "^2.0.5",
+    "phantomjs-prebuilt": "^2.1.15",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0",
+    "webpack-dev-server": "^2.9.3"
+  }
+}
