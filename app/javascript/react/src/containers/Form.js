@@ -20,7 +20,7 @@ class Form extends Component {
 
 
   handlePost(formPayload){
-   fetch('/api/v1/pages', {
+   fetch('/api/v1/static_pages', {
     credentials: 'same-origin',
     method: 'POST',
     headers: {"Content-Type": 'application/json'},
@@ -28,8 +28,12 @@ class Form extends Component {
    })
     .then(response =>  response.json())
     .then(body =>{
-       this.setState({ camps: body})
-     })
+      if (body === null){
+        this.setState({errorMessage: "Sorry, we dont know that location."})
+      } else {
+       this.setState({ camps: body, errorMessage: ''})
+      }
+    })
   }
 
 handleSubmit(event) {
@@ -37,7 +41,11 @@ handleSubmit(event) {
   let formPayload = {
     name: this.state.userInput
  };
+ if(this.state.userInput===''){
+      this.setState({errorMessage: 'Please Enter a Valid Input', camps: []})
+    } else {
   this.handlePost(formPayload);
+ }
 }
 
   handleChange(event){
@@ -46,6 +54,7 @@ handleSubmit(event) {
     let name=event.target.name
     this.setState({[name]: value})
   }
+
 
 
 render(){
@@ -68,19 +77,19 @@ let camps = this.state.camps.map(camp =>{
   return(
     <div>
     <form className="search-bar1" onSubmit={this.handleSubmit}>
-          <TitleField
-            content={this.state.userInput}
-            label="Please Enter a State"
-            name="userInput"
-            handleChange={this.handleChange}
-          />
+      <TitleField
+        content={this.state.userInput}
+        label="Enter Your Location"
+        name="userInput"
+        handleChange={this.handleChange}
+        />
         <div className="button-group">
-            <input className="button" type="submit" value="Submit" />
+         <input className="button" type="submit" value="Submit" />
         </div>
     </form>
-     {camps}
+      <h1 className='error-message'>{this.state.errorMessage}</h1>
+      {camps}
     </div>
-
   )
  }
 }
