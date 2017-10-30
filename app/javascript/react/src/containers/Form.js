@@ -59,9 +59,11 @@ handleSubmit(event) {
 
 render(){
 let camps = this.state.camps.map(camp =>{
+let path = `/camp/${camp.id}`
   return(
     <CampTile
        key={camp.id}
+       path={path}
        name={camp.name}
        address={camp.location.address1}
        country={camp.location.country}
@@ -76,17 +78,17 @@ let camps = this.state.camps.map(camp =>{
 
   return(
     <div>
-    <form className="search-bar1" onSubmit={this.handleSubmit}>
-      <TitleField
-        content={this.state.userInput}
-        label="Enter Your Location"
-        name="userInput"
-        handleChange={this.handleChange}
-        />
-         <input className="button button1" type="submit" value="Submit" />
-    </form>
-      <h1 className='error-message'>{this.state.errorMessage}</h1>
-      {camps}
+      <form className="search-bar1" onSubmit={this.handleSubmit}>
+        <TitleField
+          content={this.state.userInput}
+          label="Enter Your Location"
+          name="userInput"
+          handleChange={this.handleChange}
+          />
+           <input className="button button1" type="submit" value="Submit" />
+      </form>
+        <h1 className='error-message'>{this.state.errorMessage}</h1>
+        {camps}
     </div>
   )
  }

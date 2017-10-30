@@ -5,17 +5,34 @@ class NavBar extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      username: '',
+      signedIn: false
     }
   }
 
+  componentDidMount() {
+    fetch(`/api/v1/members.json`,
+    {method: 'GET', redirect: 'follow',
+    credentials: "same-origin",
+    headers: {"Content-Type": "application/json"}})
+    .then(response => response.json())
+    .then(body => {
+      this.setState({ username: body.username, signedIn: body.signed_in})
+    })
+  }
   render() {
+    let button;
+   if (this.state.signedIn) {
+     button = <a href='/users/sign_out'  className='sign-in'>Sign Out</a>
+   } else {
+     button =<a href="/users/sign_in" className='sign-in'>Sign In</a>
+   }
     return(
     <div>
        <div className="top-bar">
           <nav>
             <NavLink className='home' to='/' key={`navbar-${1}`}>Camping Trip Advisor</NavLink>
-            <a href='/users/sign_in' key={`navbar-${4}`} className='sign-in'>Sign In</a>
+            {button}
           </nav>
        </div>
     </div>
