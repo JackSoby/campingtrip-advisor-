@@ -14,9 +14,6 @@ const CampingtripAdvisor = props => {
       </Switch>
     </main>
     </Router>
-    <div id="new-border">
-
-  </div>
   </div>
   )
 }
