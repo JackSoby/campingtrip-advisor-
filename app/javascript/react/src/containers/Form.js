@@ -83,9 +83,7 @@ let camps = this.state.camps.map(camp =>{
         name="userInput"
         handleChange={this.handleChange}
         />
-        <div className="button-group">
-         <input className="button" type="submit" value="Submit" />
-        </div>
+         <input className="button button1" type="submit" value="Submit" />
     </form>
       <h1 className='error-message'>{this.state.errorMessage}</h1>
       {camps}
