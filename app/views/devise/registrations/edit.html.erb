@@ -4,7 +4,7 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email %><br />
+      <p class='field'>Email</p>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
@@ -13,7 +13,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <p class='field'>Password <i>(leave blank if you don't want to change it)</i></p><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
@@ -22,12 +22,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <p class='field'>Password Confromation</p><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <p class='field'>current_password<i>(we need your current password to confirm your changes)</i></p><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -36,7 +36,7 @@
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<h3 class="field">Cancel my account</h3>
 
 <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
