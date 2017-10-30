@@ -2,15 +2,10 @@ import React from 'react';
 
 const CampTile = (props) => {
   return (
-     <div className='camp-tile'>
-      <li>Name: {props.name}</li>
+    <div className='camp-tile'>
+      <a href=''><li>Name: {props.name}</li></a>
       <li>Rating: {props.rating}</li>
-      <li>Country: {props.Country}</li>
       <li>State: {props.state}</li>
-      <li>City: {props.city}</li>
-      <li>Address: {props.address}</li>
-      <li>Zip: {props.zip}</li>
-      <li>Phone: {props.phone}</li>
     </div>
   );
 }
