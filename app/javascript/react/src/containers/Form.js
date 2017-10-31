@@ -4,7 +4,6 @@ import CampTile from '../components/CampTile'
 
 
 
-
 class Form extends Component {
   constructor(props) {
     super(props)
@@ -61,6 +60,7 @@ render(){
 let camps = this.state.camps.map(camp =>{
 let path = `/camp/${camp.id}`
   return(
+
     <CampTile
        key={camp.id}
        path={path}
@@ -77,7 +77,7 @@ let path = `/camp/${camp.id}`
 })
 
   return(
-    <div>
+    <div className='content'>
       <form className="search-bar1" onSubmit={this.handleSubmit}>
         <TitleField
           content={this.state.userInput}
@@ -88,6 +88,7 @@ let path = `/camp/${camp.id}`
            <input className="button button1" type="submit" value="Submit" />
       </form>
         <h1 className='error-message'>{this.state.errorMessage}</h1>
+
         {camps}
     </div>
   )
