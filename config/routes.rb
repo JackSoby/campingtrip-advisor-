@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       namespace :v1 do
         resources :static_pages, only: [:index, :create]
          resources :members, only: [:index]
+          resources :show_pages, only: [:create]
+          resources :camps
       end
     end
     get '*path', to: 'static_pages#index'
