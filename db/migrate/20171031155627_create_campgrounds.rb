@@ -9,6 +9,7 @@ class CreateCampgrounds < ActiveRecord::Migration[5.1]
       t.string :city
       t.string :zip
       t.string :phone
+      t.string :yelp_id
 
 
      t.timestamps

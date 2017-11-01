@@ -65,12 +65,7 @@ let path = `/camp/${camp.id}`
        key={camp.id}
        path={path}
        name={camp.name}
-       address={camp.location.address1}
-       country={camp.location.country}
        state={camp.location.state}
-       city={camp.location.city}
-       zip={camp.location.zip_code}
-       phone={camp.display_phone}
        rating={camp.rating}
     />
   )
