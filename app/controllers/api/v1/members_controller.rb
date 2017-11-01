@@ -3,7 +3,7 @@ class Api::V1::MembersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    member = { signed_in: user_signed_in?}
+    member = { signed_in: user_signed_in?, id: current_user.id}
     if user_signed_in?
       render json: member
     end

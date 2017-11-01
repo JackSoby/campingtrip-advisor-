@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20171031155627) do
     t.string "city"
     t.string "zip"
     t.string "phone"
+    t.string "yelp_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
