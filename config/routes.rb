@@ -7,7 +7,9 @@ Rails.application.routes.draw do
          resources :members, only: [:index]
           resources :show_pages, only: [:create]
           resources :camps, only: [:create]
-          resources :profiles
+          resources :profiles, only: [:index]
+          resources :notes, only: [:create]
+          resources :comments, only: [:create]
       end
     end
     get '*path', to: 'static_pages#index'
