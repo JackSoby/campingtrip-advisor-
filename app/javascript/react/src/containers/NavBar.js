@@ -29,7 +29,6 @@ class NavBar extends Component {
    if (this.state.signedIn) {
      button = <a href='/users/sign_out'  className='sign-in'>Sign Out</a>
      profile =  <NavLink className='profile' to={pageLink} key={`navbar-${2}`}>Profile Page</NavLink>
-
    } else {
      button =<a href="/users/sign_in" className='profile'>Sign In</a>
      profile=''
@@ -39,7 +38,9 @@ class NavBar extends Component {
        <div className="top-bar">
           <nav>
             <NavLink className='home' to='/' key={`navbar-${1}`}>Camping Trip Advisor</NavLink>
-            <span>{button}</span>
+            <span>
+              {button}
+            </span>
             <span className='profile'>{profile}</span>
           </nav>
        </div>

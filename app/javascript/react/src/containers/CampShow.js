@@ -5,47 +5,47 @@ import CampShowTile from '../components/CampShowTile'
 class CampShow extends Component{
   constructor(props){
     super(props)
-    this.state={
-      name: '',
-      phone: '',
-      rating: '',
-      address: '',
-      city: '',
-      country: '',
-      state:'',
-      zip:'',
-      message: '',
-      id: '',
-      signedIn: false,
+      this.state={
+        name: '',
+        phone: '',
+        rating: '',
+        address: '',
+        city: '',
+        country: '',
+        state:'',
+        zip:'',
+        message: '',
+        id: '',
+        signedIn: false,
     }
     this.handleCampPost=this.handleCampPost.bind(this)
     this.handleCampSubmit=this.handleCampSubmit.bind(this)
-  }
+ }
 
 componentDidMount(){
   let campParams=this.props.match.params.id
     fetch('/api/v1/show_pages', {
-     credentials: 'same-origin',
-     method: 'POST',
-     headers: {"Content-Type": 'application/json'},
-     body: JSON.stringify(campParams)
+       credentials: 'same-origin',
+       method: 'POST',
+       headers: {"Content-Type": 'application/json'},
+       body: JSON.stringify(campParams)
     })
      .then(response =>  response.json())
      .then(body =>{
-      this.setState({ name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
+       this.setState({ name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
     })
     fetch(`/api/v1/members.json`,
       {method: 'GET', redirect: 'follow',
       credentials: "same-origin",
       headers: {"Content-Type": "application/json"}})
       .then(response => response.json())
-        .then(body => {
-      this.setState({signedIn: body.signed_in})
-      this.button=''
-      if (this.state.signedIn === true ){
-        this.button = <input onClick={this.handleCampSubmit} className="button button1" type="submit" value="Save" />
-      } else {
-        let button ='Sign in to save a campground.'
+      .then(body => {
+            this.setState({signedIn: body.signed_in})
+            this.button=''
+        if (this.state.signedIn === true ){
+          this.button = <input onClick={this.handleCampSubmit} className="button button1" type="submit" value="Save" />
+        }else{
+          let button ='Sign in to save a campground.'
       }
     })
  }
