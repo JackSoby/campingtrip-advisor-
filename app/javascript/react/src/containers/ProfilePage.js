@@ -19,12 +19,12 @@ class ProfilePage extends Component {
 
     componentDidMount() {
       fetch(`/api/v1/profiles`,
-        {method: 'GET', redirect: 'follow',
-        credentials: "same-origin",
-        headers: {"Content-Type": "application/json"}})
-      .then(response => response.json())
+          {method: 'GET', redirect: 'follow',
+          credentials: "same-origin",
+          headers: {"Content-Type": "application/json"}})
+        .then(response => response.json())
         .then(body => {
-          this.setState({id: body.id, campgrounds: body.campgrounds, first_name: body.first_name, last_name: body.last_name, fullname: `${body.first_name} ${body.last_name}`})
+        this.setState({id: body.id, campgrounds: body.campgrounds, first_name: body.first_name, last_name: body.last_name, fullname: `${body.first_name} ${body.last_name}`})
     })
   }
 
@@ -48,9 +48,9 @@ class ProfilePage extends Component {
 
     return(
       <div>
-      <h1 className='name'> Hello, {this.state.fullname}</h1>
-      <h1 className='my-campsites'>Your Campsites</h1>
-          {camps}
+        <h1 className='name'> Hello, {this.state.fullname}</h1>
+        <h1 className='my-campsites'>Your Campsites</h1>
+        {camps}
       </div>
     )
    }

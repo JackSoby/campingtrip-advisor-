@@ -16,9 +16,7 @@ class UserCampTile extends Component {
     this.handlePost=this.handlePost.bind(this)
   }
 
-
       componentDidMount() {
-
         fetch('/api/v1/comments', {
          credentials: 'same-origin',
          method: 'POST',
@@ -26,20 +24,17 @@ class UserCampTile extends Component {
          body: JSON.stringify(this.props.id)
        })
         .then(response => response.json())
-          .then(body => {
-
-            this.setState({notes: body})
+        .then(body => {
+          this.setState({notes: body})
       })
     }
 
-
-
   handlePost(formPayload){
    fetch('/api/v1/notes', {
-    credentials: 'same-origin',
-    method: 'POST',
-    headers: {"Content-Type": 'application/json'},
-    body: JSON.stringify(formPayload)
+      credentials: 'same-origin',
+      method: 'POST',
+      headers: {"Content-Type": 'application/json'},
+      body: JSON.stringify(formPayload)
    })
     .then(response =>  response.json())
     .then(body =>{
@@ -52,17 +47,17 @@ class UserCampTile extends Component {
   }
 
   handleSubmit(event) {
-    event.preventDefault();
+  event.preventDefault();
     let formPayload = {
       text: this.state.userInput,
       id: this.props.id
    };
    if(this.state.userInput===''){
         this.setState({errorMessage: 'Please Enter a Valid Input', notes: []})
-      } else {
+      }else{
     this.handlePost(formPayload);
-   }
   }
+}
 
   handleChange(event){
     console.log(this.state.userInput)
@@ -74,9 +69,9 @@ class UserCampTile extends Component {
   render(){
     let notes = this.state.notes.map(note =>{
       return(
-      <li>
-    {note.text}
-      </li>
+        <li>
+          {note.text}
+        </li>
       )
     })
 
@@ -86,13 +81,13 @@ class UserCampTile extends Component {
       <li><NavLink to={this.props.path}>{this.props.name}</NavLink></li>
       <li>Rating: {this.props.rating}</li>
       <li>State: {this.props.state}</li>
-      <NoteTitleField
-        handleSubmit={this.handleSubmit}
-        content={this.state.userInput}
-        label="Enter Notes Here"
-        name="userInput"
-        handleChange={this.handleChange}
-      />
+        <NoteTitleField
+          handleSubmit={this.handleSubmit}
+          content={this.state.userInput}
+          label="Enter Notes Here"
+          name="userInput"
+          handleChange={this.handleChange}
+        />
       <p>Notes</p>
       <div>{notes}</div>
     </div>

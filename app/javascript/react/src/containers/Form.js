@@ -17,7 +17,6 @@ class Form extends Component {
     this.handlePost=this.handlePost.bind(this)
   }
 
-
   handlePost(formPayload){
    fetch('/api/v1/static_pages', {
     credentials: 'same-origin',
@@ -40,7 +39,7 @@ handleSubmit(event) {
   let formPayload = {
     name: this.state.userInput
  };
- if(this.state.userInput===''){
+  if(this.state.userInput===''){
       this.setState({errorMessage: 'Please Enter a Valid Input', camps: []})
     } else {
   this.handlePost(formPayload);
@@ -48,9 +47,8 @@ handleSubmit(event) {
 }
 
   handleChange(event){
-    console.log(this.state.userInput)
-    let value=event.target.value
-    let name=event.target.name
+      let value=event.target.value
+      let name=event.target.name
     this.setState({[name]: value})
   }
 
@@ -60,7 +58,6 @@ render(){
 let camps = this.state.camps.map(camp =>{
 let path = `/camp/${camp.id}`
   return(
-
     <CampTile
        key={camp.id}
        path={path}
@@ -79,11 +76,10 @@ let path = `/camp/${camp.id}`
           label="Enter Your Location"
           name="userInput"
           handleChange={this.handleChange}
-          />
-           <input className="button button1" type="submit" value="Submit" />
+        />
+        <input className="button button1" type="submit" value="Submit" />
       </form>
-        <h1 className='error-message'>{this.state.errorMessage}</h1>
-
+      <h1 className='error-message'>{this.state.errorMessage}</h1>
         {camps}
     </div>
   )
