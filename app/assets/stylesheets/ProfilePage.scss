@@ -10,3 +10,16 @@
 
 
 }
+.visible{
+  visibility: visible;
+}
+.invisible{
+  visibility: hidden;
+}
+.red-note-tile {
+  border: 3px solid red;
+}
+
+input.edit-note{
+background-color: red;
+}
