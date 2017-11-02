@@ -8,7 +8,7 @@ Rails.application.routes.draw do
           resources :show_pages, only: [:create]
           resources :camps, only: [:create]
           resources :profiles, only: [:index]
-          resources :notes, only: [:create]
+          resources :notes
           resources :comments, only: [:create]
       end
     end
