@@ -67,7 +67,7 @@ class UserCampTile extends Component {
       id: this.props.id
    };
    if(this.state.userInput===''){
-        this.setState({errorMessage: 'Please Enter a Valid Input', notes: []})
+        this.setState({errorMessage: 'Please Enter a Valid Input'})
       }else{
     this.handlePost(formPayload);
     this.handleFormClear()
@@ -129,7 +129,7 @@ handleEditFetch(editPayLoad){
  })
 .then(response =>  response.json())
   .then(body =>{
-      this.setState({notes: body, edit: false})
+      this.setState({notes: body, edit: false, targetedId:''})
   })
 
 }
