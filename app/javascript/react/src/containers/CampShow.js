@@ -16,6 +16,7 @@ class CampShow extends Component{
         zip:'',
         message: '',
         id: '',
+        imame: '',
         signedIn: false,
     }
     this.handleCampPost=this.handleCampPost.bind(this)
@@ -32,7 +33,7 @@ componentDidMount(){
     })
      .then(response =>  response.json())
      .then(body =>{
-       this.setState({ name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
+       this.setState({ image: body.image_url, name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
     })
     fetch(`/api/v1/members.json`,
       {method: 'GET', redirect: 'follow',
@@ -82,19 +83,25 @@ handleCampSubmit(event){
 
   render(){
     return(
-      <CampShowTile
-        handleCampSubmit={this.handleCampSubmit}
-        name={this.state.name}
-        phone={this.state.phone}
-        rating={this.state.rating}
-        address={this.state.address}
-        city={this.state.city}
-        country={this.state.country}
-        state={this.state.state}
-        zip={this.state.zip}
-        message={this.state.message}
-        button={this.button}
-       />
+
+        <div className='cell show-cell'>
+          <CampShowTile
+            handleCampSubmit={this.handleCampSubmit}
+            name={this.state.name}
+            image={this.state.image}
+            phone={this.state.phone}
+            rating={this.state.rating}
+            address={this.state.address}
+            city={this.state.city}
+            country={this.state.country}
+            state={this.state.state}
+            zip={this.state.zip}
+            message={this.state.message}
+            button={this.button}
+           />
+
+         </div>
+
     )
   }
 }
