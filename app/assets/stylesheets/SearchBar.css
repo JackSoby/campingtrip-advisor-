@@ -18,17 +18,16 @@ h1.search-label{
   color: white;
   display: flex;
   justify-content: center;
-
 }
 
 
-.grid {
+div.grid.home-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 
 }
-.cell {
+div.cell.home-cell {
   position: relative;
   width: 10%;
   min-width: 300px;

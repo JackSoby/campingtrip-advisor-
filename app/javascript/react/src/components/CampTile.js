@@ -3,7 +3,7 @@ import { BrowserRouter, NavLink } from 'react-router-dom'
 
 const CampTile = (props) => {
   return (
-    <div className='cell'>
+    <div className='cell home-cell'>
       <NavLink to={props.path}>
         <img src={props.image} className='yelp-image'/>
         <ul>

@@ -112,7 +112,7 @@ let path = `/camp/${camp.id}`
         <h1 className='campsites-near'>{welcomeMessage}</h1>
       </div>
         <h1 className='error-message'>{this.state.errorMessage}</h1>
-      <div className='grid'>
+      <div className='grid home-grid'>
         {camps}
       </div>
     </div>
