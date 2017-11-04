@@ -44,7 +44,7 @@ componentDidMount(){
             this.setState({signedIn: body.signed_in})
             this.button=''
         if (this.state.signedIn === true ){
-          this.button = <input onClick={this.handleCampSubmit} className="button button1" type="submit" value="Save" />
+          this.button = <input onClick={this.handleCampSubmit} className="button button2" type="submit" value="Save" />
         }else{
           let button ='Sign in to save a campground.'
       }
