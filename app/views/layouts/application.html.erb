@@ -9,12 +9,13 @@
     <title>Camping Trip Advisor</title>
     <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Fredericka+the+Great', 'https://fonts.googleapis.com/css?family=Fugaz+One', "https://fonts.googleapis.com/css?family=Londrina+Solid", "https://fonts.googleapis.com/css?family=Londrina+Solid|Sumana"%>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
+    <%= javascript_pack_tag 'index.js' %>
   </head>
 
   <body>
 
     <%= yield %>
-    <%= javascript_include_tag "application" %>
   </body>
 </html>
