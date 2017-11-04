@@ -1,12 +1,18 @@
 .search-bar1{
-  margin-left: 250px;
-  margin-right: 250px;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-top:  175px;
   min-width:200px;
-
-
 }
-
+input.search-bar2{
+  border-radius: 4px;
+}
+h1.search-label{
+   text-align: center;
+   color: #000000;
+   font-size: 55px;
+   font-family: 'Londrina Solid', cursive;
+}
 .error-message{
   background-color: red;
   color: white;
@@ -14,31 +20,66 @@
   justify-content: center;
 
 }
-.button1{
-  background-color: #234B1A;
-  color: #F2EAC1;
+
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
 }
-.button1:hover {
-  background-color: #234B1A;
-  color: white;
+.cell {
+  position: relative;
+  width: 10%;
+  min-width: 300px;
+  height: 100px;
+  flex: 0 0 32%;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  background-color: #E7E1DD;
+  opacity: .9;
+  text-align: center;
 }
-.button1:focus {
-    color: #F2EAC1;
+
+.cell:hover{
+  background-color: #E7E1DD;
+  opacity: 0.6;
 }
-.button1:target {
-  background-color: #234B1A;
+
+.yelp-image {
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 100px;
+  z-index: 20;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-.button1:active {
-  background-color: #234B1A;
+
+.camp-text {
+  float: center;
+  margin: 0;
+  padding: 0;
+  color: #96292B;
+  font-family: 'Sumana', serif;
 }
-.camp-tile {
-     margin: 0 auto;
-     margin-top: 50px;
-     width: 25%;
-     border: 3px solid #5D3E0F;
-     padding: 10px;
-     background-color: white;
+.campsites-near{
+  text-align: center;
+   color: silver;
+  font-size: 75px;
+  font-family: 'Sumana', serif;
 }
-.search-label{
-  color: #F2EAC1;
+.search-label-div{
+  border: 2px;
+  background-color: #E7E1DD;
+  opacity: 0.8;
+  margin-left: -25px;
+  margin-right: -25px;
+}
+input.button.button1{
+  background-color: #E7E1DD;
+  border: 2px;
+  font-family: 'Sumana', serif;
+  color: #2A161D;
+  opacity: 0.7
 }

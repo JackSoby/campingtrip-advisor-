@@ -1,49 +1,62 @@
 .top-bar {
   padding-left: 10px;
   padding-right: 10px;
-  background-color: #234B1A;
+}
+
+div.top-bar{
+    background-color: #E7E1DD;
+    opacity: 0.6;
+    padding-bottom: 65px;
 }
 
 .sign-in{
-  float: right;
-  color: #F2EAC1;
+    float: right;
+    color: #F2EAC1;
+    font-weight: bold;
+    color: #000000;
+   font-family: 'Sumana', serif;
+    font-size: 20px;
 }
-
-.sign-in:hover {
-  color: white;
+.sign-in:hover{
+   color: #2A161D;
 }
-
-.sign-in:focus {
-  color: #F2EAC1;
+.sign-in:hover{
+   color: #2A161D;
 }
 
 .profile{
   float: right;
-  color: #F2EAC1;
-  margin-right: 10px
+  color: #000000;
+  margin-right: 10px;
+  font-weight: bold;
+  font-family: 'Sumana', serif;
+  font-size: 20px;
+}
+.profile:hover{
+   color: #2A161D;
+}
+.profile:focus{
+   color: #2A161D;
 }
 
-.profile:hover {
-  color: white;
-}
-
-.profile:focus {
-  color: #F2EAC1;
-}
 .home {
-  color: #F2EAC1;
+  font-weight: bold;
+  color: #000000;
+  font-family: 'Sumana', serif;
+  font-size: 20px;
+}
+.home:hover{
+   color: #2A161D;
+}
+.home:focus{
+   color: #2A161D;
 }
 
-.home:hover {
-  color: white;
-}
-
-.home:focus {
-  color: #F2EAC1;
-}
-
-body{
+.background-image{
   background-repeat: no-repeat;
+  background-image: url("lexi-ruskell-217652");
   background-size: cover;
-  background-color: #234B1A;
+  height: 1000px;
+  background-color: gray;
+  filter: brightness(85%);
 }
