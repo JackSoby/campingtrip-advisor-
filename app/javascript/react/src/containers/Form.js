@@ -8,14 +8,26 @@ class Form extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      userInput: '',
+      userInput: null,
       camps: [],
-      errorMessage:''
+      errorMessage:'',
+      current_user: false
     }
     this.handleChange=this.handleChange.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
     this.handlePost=this.handlePost.bind(this)
   }
+
+  componentDidMount(){
+    fetch(`/api/v1/homes`,
+        {method: 'GET', redirect: 'follow',
+        credentials: "same-origin",
+        headers: {"Content-Type": "application/json"}})
+      .then(response => response.json())
+      .then(body => {
+      this.setState({camps: body.campgrounds, current_user: body.session})
+  })
+}
 
   handlePost(formPayload){
    fetch('/api/v1/static_pages', {
@@ -55,15 +67,30 @@ handleSubmit(event) {
 
 
 render(){
+let welcomeMessage;
+   if(this.state.current_user === true && this.state.userInput === null ){
+   welcomeMessage=`Campsites near You`
+} else if (this.state.current_user === true && this.state.userInput !== null) {
+  welcomeMessage=`Campsites Near ${this.state.userInput}`
+} else if (this.state.current_user === false && this.state.userInput!== null) {
+  welcomeMessage=`Campsites Near ${this.state.userInput}`
+ }
+
+
+
+
+
 let camps = this.state.camps.map(camp =>{
 let path = `/camp/${camp.id}`
   return(
     <CampTile
        key={camp.id}
+       input={this.state.userInput}
        path={path}
        name={camp.name}
        state={camp.location.state}
        rating={camp.rating}
+       image={camp.image_url}
     />
   )
 })
@@ -71,16 +98,23 @@ let path = `/camp/${camp.id}`
   return(
     <div className='content'>
       <form className="search-bar1" onSubmit={this.handleSubmit}>
-        <TitleField
-          content={this.state.userInput}
-          label="Enter Your Location"
-          name="userInput"
-          handleChange={this.handleChange}
-        />
-        <input className="button button1" type="submit" value="Submit" />
+      <div className='search-label-div'>
+      <h1 className='search-label'>Please enter a location</h1>
+      </div>
+          <TitleField
+            content={this.state.userInput}
+            name="userInput"
+            handleChange={this.handleChange}
+          />
+          <input className="button button1" type="submit" value="Submit" />
       </form>
-      <h1 className='error-message'>{this.state.errorMessage}</h1>
+      <div className="search-label-div2">
+        <h1 className='campsites-near'>{welcomeMessage}</h1>
+      </div>
+        <h1 className='error-message'>{this.state.errorMessage}</h1>
+      <div className='grid'>
         {camps}
+      </div>
     </div>
   )
  }

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
           resources :profiles, only: [:index]
           resources :notes
           resources :comments, only: [:create]
+          resources :homes, only: [:index]
       end
     end
     get '*path', to: 'static_pages#index'
