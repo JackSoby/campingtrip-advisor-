@@ -40,7 +40,7 @@ div.cell.home-cell {
   text-align: center;
 }
 
-.cell:hover{
+.cell.home-cell:hover{
   background-color: #E7E1DD;
   opacity: 0.6;
 }

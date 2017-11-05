@@ -15,10 +15,14 @@ Rails.application.routes.draw do
     end
     get '*path', to: 'static_pages#index'
   end
-  #   <h3>Address: {props.address}</h3>
-  # // <li>Country: {props.country}</li>
-  # // <li>State: {props.state}</li>
-  # // <li>City: {props.city}</li>
-  # // <li>Zip: {props.zip}</li>
-  # // <li>Phone: {props.phone}</li>
-  # // <div>{props.button}</div>
+
+  #    <NoteTitleField
+  #       editButton={this.state.edit}
+  #       handleSubmit={this.handleSubmit}
+  #       handleEditSubmit={this.handleEditSubmit}
+  #       content={this.state.userInput}
+  #       label="Enter Notes Here"
+  #       name="userInput"
+  #       handleChange={this.handleChange}
+  #      />
+  #   <p>{notes} </p>

@@ -48,9 +48,15 @@ class ProfilePage extends Component {
 
     return(
       <div>
-        <h1 className='name'> Helo, {this.state.fullname}</h1>
-        <h1 className='my-campsites'>Your Campsites</h1>
-        {camps}
+        <div className='user-name-div'>
+          <h1 className='name'> Hey {this.state.first_name}</h1>
+        </div>
+          <div className='my-camps-div'>
+            <h1 className='my-campsites'>Your Campsites</h1>
+          </div>
+          <div className='grid user-grid'>
+            {camps}
+        </div>
       </div>
     )
    }
