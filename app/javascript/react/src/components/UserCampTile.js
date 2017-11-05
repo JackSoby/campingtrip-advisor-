@@ -25,25 +25,26 @@ class UserCampTile extends Component {
     this.handleFormClear=this.handleFormClear.bind(this)
   }
 
-      componentDidMount() {
-        fetch('/api/v1/comments', {
-         credentials: 'same-origin',
-         method: 'POST',
-         headers: {"Content-Type": 'application/json'},
-         body: JSON.stringify(this.props.id)
-       })
-        .then(response => response.json())
-        .then(body => {
-          this.setState({notes: body})
-      })
-    }
-    handleFormClear(){
-      this.setState({
+componentDidMount() {
+  fetch('/api/v1/comments', {
+     credentials: 'same-origin',
+     method: 'POST',
+     headers: {"Content-Type": 'application/json'},
+     body: JSON.stringify(this.props.id)
+  })
+    .then(response => response.json())
+    .then(body => {
+      this.setState({notes: body})
+    })
+  }
+
+  handleFormClear(){
+   this.setState({
       userInput: ''
       })
     }
 
-  handlePost(formPayload){
+handlePost(formPayload){
    fetch(`/api/v1/notes`, {
       credentials: 'same-origin',
       method: 'POST',
@@ -59,21 +60,19 @@ class UserCampTile extends Component {
       }
     })
   }
-
   handleSubmit(event) {
   event.preventDefault();
     let formPayload = {
       text: this.state.userInput,
       id: this.props.id
    };
-   if(this.state.userInput===''){
-        this.setState({errorMessage: 'Please Enter a Valid Input'})
-      }else{
+    if(this.state.userInput===''){
+      this.setState({errorMessage: 'Please Enter a Valid Input'})
+    }else{
     this.handlePost(formPayload);
     this.handleFormClear()
   }
 }
-
 
 
   handleChange(event){
@@ -83,17 +82,14 @@ class UserCampTile extends Component {
     this.setState({[name]: value})
   }
 
-
-
-
 handleDestroy(deletePayLoad){
   fetch(`/api/v1/notes/${this.props.id}`, {
   credentials: 'same-origin',
   method: 'delete',
   headers: {"Content-Type": 'application/json'},
   body: JSON.stringify(deletePayLoad)
- })
-.then(response =>  response.json())
+  })
+  .then(response =>  response.json())
   .then(body =>{
       this.setState({notes: body})
   })
@@ -104,11 +100,11 @@ handleDestroy(deletePayLoad){
 
   handleDelete(event){
     event.preventDefault();
-    let value=event.target.value
-     let deletePayLoad={
-       text: value,
-       id: this.props.id
-     }
+      let value=event.target.value
+      let deletePayLoad={
+        text: value,
+        id: this.props.id
+      }
      this.handleDestroy(deletePayLoad)
   }
 
@@ -144,39 +140,35 @@ handleEditFetch(editPayLoad){
   }
 
   render(){
-    let noteTile;
-    if (this.state.noteTile === true ){
-      noteTile = 'red-note-tile'
-    } else {
-      noteTile= 'note-tile'
-    }
-
     let notes = this.state.notes.map(note =>{
       let className = (note.id.toString() === this.state.targetedId) ? 'red-note-tile' : null
-
       return(
-      <li className={className}>{note.text}<button value={note.text} onClick={this.handleDelete}>Delete</button><button value={note.text} name={note.id} onClick={this.handleEdit} >Edit</button></li>
+      <p id='note-tile'className={className}>{note.text}<button  className="note-button" value={note.text} onClick={this.handleDelete}>Delete</button><button value={note.text}  className='note-button' name={note.id} onClick={this.handleEdit} >Edit</button></p>
       )
     })
 
 
   return (
-    <div className='camp-tile'>
-      <li><NavLink to={this.props.path}>{this.props.name}</NavLink></li>
-      <li>Rating: {this.props.rating}</li>
-      <li>State: {this.props.state}</li>
-        <NoteTitleField
-          editButton={this.state.edit}
-          handleSubmit={this.handleSubmit}
-          handleEditSubmit={this.handleEditSubmit}
-          content={this.state.userInput}
-          label="Enter Notes Here"
-          name="userInput"
-          handleChange={this.handleChange}
-        />
-      <p>Notes</p>
-      <div>{notes}</div>
-    </div>
+<div className='dropdown'>
+  <div className='cell user-camp-tile'>
+    <NavLink className='campsite-name' to={this.props.path}>
+      {this.props.name}
+      </NavLink>
+      </div>
+        <div className='notes'>
+          <NoteTitleField
+            editButton={this.state.edit}
+            handleSubmit={this.handleSubmit}
+            handleEditSubmit={this.handleEditSubmit}
+            content={this.state.userInput}
+            label="Enter Notes Here"
+            name="userInput"
+            andleChange={this.handleChange}
+          />
+      <p>{notes} </p>
+  </div>
+</div>
+
   );
  }
 }
