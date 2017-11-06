@@ -10,7 +10,6 @@ class Form extends Component {
     this.state = {
       userInput: null,
       camps: [],
-      errorMessage:'',
       current_user: false
     }
     this.handleChange=this.handleChange.bind(this)
@@ -38,11 +37,7 @@ class Form extends Component {
    })
     .then(response =>  response.json())
     .then(body =>{
-      if (body === null){
-        this.setState({errorMessage: "Sorry, we dont know that location."})
-      } else {
        this.setState({ camps: body, errorMessage: ''})
-      }
     })
   }
 
@@ -51,19 +46,13 @@ handleSubmit(event) {
   let formPayload = {
     name: this.state.userInput
  };
-  if(this.state.userInput===''){
-      this.setState({errorMessage: 'Please Enter a Valid Input', camps: []})
-    } else {
   this.handlePost(formPayload);
- }
 }
-
   handleChange(event){
       let value=event.target.value
       let name=event.target.name
     this.setState({[name]: value})
   }
-
 
 
 render(){
