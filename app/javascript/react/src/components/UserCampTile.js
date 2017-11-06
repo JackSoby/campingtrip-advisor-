@@ -163,7 +163,7 @@ handleEditFetch(editPayLoad){
             content={this.state.userInput}
             label="Enter Notes Here"
             name="userInput"
-            andleChange={this.handleChange}
+            handleChange={this.handleChange}
           />
       <p>{notes} </p>
   </div>

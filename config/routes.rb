@@ -15,14 +15,3 @@ Rails.application.routes.draw do
     end
     get '*path', to: 'static_pages#index'
   end
-
-  #    <NoteTitleField
-  #       editButton={this.state.edit}
-  #       handleSubmit={this.handleSubmit}
-  #       handleEditSubmit={this.handleEditSubmit}
-  #       content={this.state.userInput}
-  #       label="Enter Notes Here"
-  #       name="userInput"
-  #       handleChange={this.handleChange}
-  #      />
-  #   <p>{notes} </p>

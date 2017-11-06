@@ -13,7 +13,7 @@ const NoteTitleField = (props) => {
   }
 
   return (
-    <label onChange={props.handleChange}><p className='note-entry-label'>{props.label}</p>
+    <label onChange={props.handleChange}><h3 className='note-entry-label'>{props.label}</h3>
       <input
         className={className}
         placeholder='Notes'
