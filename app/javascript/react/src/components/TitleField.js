@@ -5,7 +5,7 @@ const TitleField = (props) => {
     <label onChange={props.handleChange}><h3 className='search-label'>{props.label}</h3>
       <input
         className='search-bar2'
-        placeholder='City, State, Zip'
+        placeholder='State'
         name={props.name}
         type='text'
         value={props.content}

@@ -1,12 +1,15 @@
 import 'babel-polyfill';
 
 import React from 'react';
-import { mount } from 'enzyme';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 import jasmineEnzyme from 'jasmine-enzyme';
 
 beforeEach(() => {
   jasmineEnzyme();
 })
+
+configure({ adapter: new Adapter() });
 
 // function to require all modules for a given context
 let requireAll = requireContext => {
