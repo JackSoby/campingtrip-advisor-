@@ -1,6 +1,22 @@
 .field{
-color: #F2EAC1;
-width: 50%;
-min-width: inherit;
-padding-left: 10px
+  float: center;
+  margin: 0;
+  padding: 0;
+  color: silver;
+  font-family: 'Sumana', serif;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+body{
+  background-repeat: no-repeat;
+  background-image: url("lexi-ruskell-217652");
+  background-size: cover;
+  height: 900px;
+  filter: brightness(85%);
+}
+.actions{
+  padding-left: 10px;
+}
+.links{
+background-color: red;
 }

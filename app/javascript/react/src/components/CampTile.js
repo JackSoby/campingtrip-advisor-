@@ -8,8 +8,8 @@ const CampTile = (props) => {
         <img src={props.image} className='yelp-image'/>
         <ul>
           <p className='camp-text'>{props.name}</p>
-          <p className='camp-text'>Rating: {props.rating}</p>
           <p className='camp-text'>State: {props.state}</p>
+          <p className='camp-text2'>{props.rating}</p>
         </ul>
       </NavLink>
     </div>

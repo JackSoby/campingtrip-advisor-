@@ -19,16 +19,17 @@
   font-family: 'Sumana', serif;
 }
 
+
 #note-tile{
   margin: 0;
   padding: 0;
-  color: #96292B;
+  color: black;
   font-family: 'Sumana', serif;
 }
 .name{
-  text-align: center;
-   color: black;
-  font-size: 75px;
+    text-align: center;
+    color: black;
+    font-size: 75px;
     font-family: 'Londrina Solid', cursive;
 }
 .user-name-div{
@@ -68,7 +69,7 @@ background-color: #5F1E27;
 
 .cell.user-camp-tile{
   min-width: 300px;
-  height: 50px;
+  height: 30px;
   margin-bottom: 10px;
   flex: 0 0 32%;
   background-color: #E7E1DD;
@@ -76,26 +77,38 @@ background-color: #5F1E27;
   cursor: pointer;
 }
 
+
 .grid.user-grid{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  text-align: center;
 }
 .notes{
   display: none;
   background-color: #E7E1DD;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.button.note-submit-button{
+  text-align: center;
+  margin-right: 100px;
+  background-color: #E7E1DD;
+  color: #96292B;
+  font-family: 'Sumana', serif;
+  margin-left: 10px
 }
 
 .note-button{
   background-color: #E7E1DD;
   padding: 0;
   margin-left: 10px;
-  color: black;
+  color: #96292B;
   font-family: 'Sumana', serif;
 }
 .note-button:hover{
   background-color: #E7E1DD;
-  color: black;
+  color: #96292B;
 
 }
 .note-button:focus{

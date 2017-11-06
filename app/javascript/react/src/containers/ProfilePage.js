@@ -16,7 +16,6 @@ class ProfilePage extends Component {
 
   }
 
-
     componentDidMount() {
       fetch(`/api/v1/profiles`,
           {method: 'GET', redirect: 'follow',

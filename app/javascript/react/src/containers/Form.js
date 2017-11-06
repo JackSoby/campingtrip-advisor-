@@ -66,10 +66,19 @@ let welcomeMessage;
  }
 
 
-
-
-
 let camps = this.state.camps.map(camp =>{
+  let rating;
+  if (camp.rating <=1 ){
+    rating =<div className='camp-home-rating'></div>
+  } else if (camp.rating <=2 ){
+    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+  } else if (camp.rating <=3 ){
+    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+  } else if (camp.rating <=4 ){
+    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+  } else if (camp.rating <=5 ){
+    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+  }
 let path = `/camp/${camp.id}`
   return(
     <CampTile
@@ -78,7 +87,7 @@ let path = `/camp/${camp.id}`
        path={path}
        name={camp.name}
        state={camp.location.state}
-       rating={camp.rating}
+       rating={rating}
        image={camp.image_url}
     />
   )
@@ -98,7 +107,7 @@ let path = `/camp/${camp.id}`
           <input className="button button1" type="submit" value="Submit" />
       </form>
       <div className="search-label-div2">
-        <h1 className='campsites-near'>{welcomeMessage}</h1>
+        <div className='search-label-div3'><h1 className='campsites-near'>{welcomeMessage}</h1></div>
       </div>
         <h1 className='error-message'>{this.state.errorMessage}</h1>
       <div className='grid home-grid'>

@@ -82,15 +82,28 @@ handleCampSubmit(event){
 }
 
   render(){
+    let rating;
+    if (this.state.rating <=1 ){
+     rating =<div className='camp-rating'></div>
+   } else if (this.state.rating <=2 ){
+     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+   } else if (this.state.rating <=3 ){
+     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+   } else if (this.state.rating <=4 ){
+     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+   } else if (this.state.rating <=5 ){
+     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+   }
     return(
 
         <div className='cell show-cell'>
           <CampShowTile
+    
             handleCampSubmit={this.handleCampSubmit}
             name={this.state.name}
             image={this.state.image}
             phone={this.state.phone}
-            rating={this.state.rating}
+            rating={rating}
             address={this.state.address}
             city={this.state.city}
             country={this.state.country}
