@@ -13,7 +13,7 @@ const NoteTitleField = (props) => {
   }
 
   return (
-    <label onChange={props.handleChange}><h3 className='note-entry-label'>{props.label}</h3>
+    <label onChange={props.handleChange}><h5 className='note-entry-label'>{props.label}</h5>
       <input
         className={className}
         placeholder='Notes'
@@ -21,7 +21,7 @@ const NoteTitleField = (props) => {
         type='text'
         value={props.content}
       />
-      <input onClick={props.handleSubmit} className="button button1" type="submit" value="Submit" />
+      <input onClick={props.handleSubmit} className="button note-submit-button" type="submit" value="Submit" />
       <button onClick={props.handleEditSubmit} className={editButton} type="submit" >Edit</button>
     </label>
   );

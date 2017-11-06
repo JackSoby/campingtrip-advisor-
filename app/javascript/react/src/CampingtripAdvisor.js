@@ -7,7 +7,7 @@ import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
 const CampingtripAdvisor = props => {
   return(
-  <div className='background-image'>
+  <div>
     <Router>
       <main>
        <NavBar/>

@@ -59,14 +59,41 @@ div.cell.home-cell {
   float: center;
   margin: 0;
   padding: 0;
+  color: #030305;
+  font-family: 'Sumana', serif;
+}
+.camp-text2 {
+  float: center;
+  margin: 0;
+  padding: 0;
   color: #96292B;
   font-family: 'Sumana', serif;
+  padding-right: 110px;
+}
+.camp-home-rating{
+  position: relative;
+  float: right;
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  z-index: 20;
+  background-image: url("67385.jpg");
+  background-size: cover;
+
+}
+.search-label-div3{
+  border: 2px;
+  background-color: #E7E1DD;
+  opacity: 0.8;
+  margin-left: 25px;
+  margin-right: 25px;
+
 }
 .campsites-near{
   text-align: center;
-   color: silver;
-  font-size: 75px;
-  font-family: 'Sumana', serif;
+  color: #000000;
+  font-size: 55px;
+  font-family: 'Londrina Solid', cursive;
 }
 .search-label-div{
   border: 2px;
