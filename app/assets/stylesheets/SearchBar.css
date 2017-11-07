@@ -71,8 +71,7 @@ div.cell.home-cell {
   padding-right: 110px;
 }
 .camp-home-rating{
-  position: relative;
-  float: right;
+  display: inline-block;
   width: 30px;
   height: 30px;
   min-height: 30px;

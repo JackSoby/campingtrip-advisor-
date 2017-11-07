@@ -69,15 +69,15 @@ let welcomeMessage;
 let camps = this.state.camps.map(camp =>{
   let rating;
   if (camp.rating <=1 ){
-    rating =<div className='camp-home-rating'></div>
+    rating =<span ><div className='camp-home-rating'></div></span>
   } else if (camp.rating <=2 ){
-    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
   } else if (camp.rating <=3 ){
-    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
   } else if (camp.rating <=4 ){
-    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
   } else if (camp.rating <=5 ){
-    rating=<div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></div>
+    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
   }
 let path = `/camp/${camp.id}`
   return(
