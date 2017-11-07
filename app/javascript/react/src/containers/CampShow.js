@@ -15,6 +15,8 @@ class CampShow extends Component{
         state:'',
         zip:'',
         message: '',
+        lat: null,
+        lng: null,
         id: '',
         imame: '',
         signedIn: false,
@@ -33,7 +35,7 @@ componentDidMount(){
     })
      .then(response =>  response.json())
      .then(body =>{
-       this.setState({ image: body.image_url, name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
+       this.setState({ lng: body.coordinates.longitude, lat: body.coordinates.latitude, image: body.image_url, name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
     })
     fetch(`/api/v1/members.json`,
       {method: 'GET', redirect: 'follow',
@@ -97,8 +99,9 @@ handleCampSubmit(event){
     return(
 
         <div className='cell show-cell'>
-          <CampShowTile
-    
+          {(this.state.lat && this.state.lng) ? <CampShowTile
+            lng={this.state.lng}
+            lat={this.state.lat}
             handleCampSubmit={this.handleCampSubmit}
             name={this.state.name}
             image={this.state.image}
@@ -111,7 +114,7 @@ handleCampSubmit(event){
             zip={this.state.zip}
             message={this.state.message}
             button={this.button}
-           />
+           /> : null}
 
          </div>
 
