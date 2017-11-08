@@ -1,11 +1,10 @@
 class Api::V1::CampsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-
         def create
            camp_test = Campground.where(name: params[:name])
           if camp_test.empty?
-          new_camp = Campground.create(name: params[:name], address: params[:address], rating: params[:rating], country: params[:country], state: params[:state], city: params[:city], zip: params[:zip], phone: params[:phone], yelp_id: params[:id])
+          new_camp = Campground.create(lat: params[:lat], lng: params[:lng],name: params[:name], address: params[:address], rating: params[:rating], country: params[:country], state: params[:state], city: params[:city], zip: params[:zip], phone: params[:phone], yelp_id: params[:id])
           if new_camp.save
              test_fav = Favorite.create(user: current_user, campground: new_camp)
             message = 'Campsite saved'

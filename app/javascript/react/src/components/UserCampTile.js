@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, NavLink } from 'react-router-dom'
 import NoteTitleField from './NoteTitleField'
+import GoogleMapsTile from './GoogleMapsTile'
 
 
 class UserCampTile extends Component {
@@ -14,6 +15,7 @@ class UserCampTile extends Component {
       edit: false,
       targetedId: ``,
       noteTile: false,
+
     }
     this.handleChange=this.handleChange.bind(this)
     this.handleSubmit=this.handleSubmit.bind(this)
@@ -23,6 +25,7 @@ class UserCampTile extends Component {
     this.handleEdit=this.handleEdit.bind(this)
     this.handleEditSubmit=this.handleEditSubmit.bind(this)
     this.handleFormClear=this.handleFormClear.bind(this)
+
   }
 
 componentDidMount() {
@@ -37,6 +40,7 @@ componentDidMount() {
       this.setState({notes: body})
     })
   }
+
 
   handleFormClear(){
    this.setState({
@@ -96,8 +100,6 @@ handleDestroy(deletePayLoad){
 }
 
 
-
-
   handleDelete(event){
     event.preventDefault();
       let value=event.target.value
@@ -150,25 +152,27 @@ handleEditFetch(editPayLoad){
 
   return (
 <div className='dropdown'>
-  <div className='cell user-camp-tile'>
+  <div className='user-camp-tile'>
     <NavLink className='campsite-name' to={this.props.path}>
       {this.props.name}
-      </NavLink>
-      </div>
-        <div className='notes'>
-          <NoteTitleField
-            editButton={this.state.edit}
-            handleSubmit={this.handleSubmit}
-            handleEditSubmit={this.handleEditSubmit}
-            content={this.state.userInput}
-            label="Enter Notes Here"
-            name="userInput"
-            handleChange={this.handleChange}
-          />
-      <p>{notes} </p>
+    </NavLink>
+  </div>
+  <div className='notes'>
+    <NoteTitleField
+      lat={this.props.lat}
+      lng={this.props.lng}
+      handleCoordniates={this.props.handleCoordniates}
+      editButton={this.state.edit}
+      handleSubmit={this.handleSubmit}
+      handleEditSubmit={this.handleEditSubmit}
+      content={this.state.userInput}
+      label="Enter Notes Here"
+      name="userInput"
+      handleChange={this.handleChange}
+    />
+    <p>{notes}</p>
   </div>
 </div>
-
   );
  }
 }
