@@ -70,16 +70,6 @@ div.cell.home-cell {
   font-family: 'Sumana', serif;
   padding-right: 110px;
 }
-.camp-home-rating{
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  min-height: 30px;
-  z-index: 20;
-  background-image: url("67385.jpg");
-  background-size: cover;
-
-}
 .search-label-div3{
   border: 2px;
   background-color: #E7E1DD;

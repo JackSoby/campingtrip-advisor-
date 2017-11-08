@@ -62,10 +62,7 @@
   border: 3px solid #5F1E27;
 }
 
-input.edit-note{
-background-color: #5F1E27;
 
-}
 
 .cell.user-camp-tile{
   min-width: 300px;
@@ -98,7 +95,20 @@ background-color: #5F1E27;
   font-family: 'Sumana', serif;
   margin-left: 10px
 }
-
+.visible{
+  background-color: #E7E1DD;
+  padding: 0;
+  margin-left: 10px;
+  color: #96292B;
+  font-family: 'Sumana', serif;
+}
+.visible:hover{
+   background-color: #E7E1DD;
+  color: #96292B;
+}
+.visible:focus{
+    background-color: #E7E1DD;
+}
 .note-button{
   background-color: #E7E1DD;
   padding: 0;
