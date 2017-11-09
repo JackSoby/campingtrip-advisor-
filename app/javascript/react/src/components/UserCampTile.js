@@ -145,7 +145,7 @@ handleEditFetch(editPayLoad){
     let notes = this.state.notes.map(note =>{
       let className = (note.id.toString() === this.state.targetedId) ? 'red-note-tile' : null
       return(
-      <p id='note-tile'className={className}>{note.text}<button  className="note-button" value={note.text} onClick={this.handleDelete}>Delete</button><button value={note.text}  className='note-button' name={note.id} onClick={this.handleEdit} >Edit</button></p>
+      <div id='note-tile'className={className}>{note.text}<button className="note-button" value={note.text} onClick={this.handleDelete}>Delete</button><button value={note.text}  className='note-button' name={note.id} onClick={this.handleEdit} >Edit</button></div>
       )
     })
 

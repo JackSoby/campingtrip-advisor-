@@ -7,7 +7,7 @@ const CampShowTile = (props) => {
     <div className='cell show-cell'>
         {props.rating}
         <h1 className='big-name'>{props.name}</h1>
-        <h3>{props.message}</h3>
+        <h3 className='message'>{props.message}</h3>
         <img className='show-image' src={props.image}/>
           <GoogleMapsTile
             lng={props.lng}

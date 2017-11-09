@@ -12,6 +12,9 @@
 .big-name{
   font-family: 'Londrina Solid', cursive;
 }
+.message{
+  font-family: 'Sumana', serif;
+}
 #map {
   height: 200px;
   width: 200px;
@@ -35,14 +38,14 @@
 }
 
 input.button.button2{
-    background-color: #E7E1DD;
+  background-color: #E7E1DD;
   font-family: 'Sumana', serif;
   color: #850000;
   opacity: 1;
   font-size: 15px;
   padding: 10px;
   width: 7%;
-float: right;
+  float: right;
 }
 img.show-image {
   position: relative;
