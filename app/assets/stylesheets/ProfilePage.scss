@@ -13,22 +13,24 @@
   color: #96292B;
   font-family: 'Sumana', serif;
 }
-.google-div{
-  position: relative;
-  float: right;
+div.dropdown{
+  background-color: red;
 }
+
 #note-tile{
-  margin: 0;
-  padding: 0;
+  margin-bottom: 25px;
+  height: 50px;
+  padding-bottom: 50px;
   color: black;
   font-family: 'Sumana', serif;
 }
 .note-field{
-  margin-top: -10px;
+  margin-top: -15px;
 }
 #user-map{
   height:500px;
   width:500px;
+  margin-top: 2px;
 }
 .name{
     text-align: center;
@@ -63,7 +65,7 @@
   visibility: hidden;
 }
 .red-note-tile {
-  border: 3px solid #5F1E27;
+  border: 2px solid #5F1E27;
 }
 .user-camp-tile{
   margin-bottom: 10px;
@@ -100,7 +102,7 @@
 }
 .visible:hover{
    background-color: #E7E1DD;
-  color: #96292B;
+   color: #96292B;
 }
 .visible:focus{
     background-color: #E7E1DD;
@@ -119,8 +121,14 @@
 }
 .note-button:focus{
   background-color: #E7E1DD;
-
+}
+.dropdown .notes{
+padding-bottom: 1px;
 }
 .dropdown:hover .notes{
   display: block;
+}
+input.edit-note{
+  background-color: #96292B;
+  opacity: 0.8
 }
