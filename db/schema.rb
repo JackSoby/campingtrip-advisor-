@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 20171101164056) do
     t.string "zip"
     t.string "phone"
     t.string "yelp_id"
+    t.float "lat"
+    t.float "lng"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,16 +1,11 @@
 .my-campsites{
-  text-align: center;
-  color: #000000;
-  font-size: 55px;
+  color: black;
   font-family: 'Londrina Solid', cursive;
 }
 .my-camps-div{
-  border: 2px;
   background-color: #E7E1DD;
   opacity: 0.8;
-  margin-top: 30px;
-  margin-left: 25px;
-  margin-right: 25px;
+  text-align: center;
 }
 .note-entry-label{
   margin: 0;
@@ -18,13 +13,22 @@
   color: #96292B;
   font-family: 'Sumana', serif;
 }
-
-
+.google-div{
+  position: relative;
+  float: right;
+}
 #note-tile{
   margin: 0;
   padding: 0;
   color: black;
   font-family: 'Sumana', serif;
+}
+.note-field{
+  margin-top: -10px;
+}
+#user-map{
+  height:500px;
+  width:500px;
 }
 .name{
     text-align: center;
@@ -38,7 +42,7 @@
   background-color: #E7E1DD;
   opacity: 0.8;
   margin-left: -25px;
-  margin-right: -25px;
+  margin-right: 0px;
 }
 .campsite-name{
   margin: 0;
@@ -61,19 +65,11 @@
 .red-note-tile {
   border: 3px solid #5F1E27;
 }
-
-
-
-.cell.user-camp-tile{
-  min-width: 300px;
-  height: 30px;
+.user-camp-tile{
   margin-bottom: 10px;
-  flex: 0 0 32%;
   background-color: #E7E1DD;
   text-align: center;
-  cursor: pointer;
 }
-
 
 .grid.user-grid{
   display: flex;

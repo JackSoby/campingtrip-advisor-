@@ -78,7 +78,9 @@ handleCampSubmit(event){
     country: this.state.country,
     state: this.state.state,
     zip: this.state.zip,
-    id: this.state.id
+    id: this.state.id,
+    lng: this.state.lng,
+    lat: this.state.lat
  };
   this.handleCampPost(formPayload);
 }
@@ -115,7 +117,6 @@ handleCampSubmit(event){
             message={this.state.message}
             button={this.button}
            /> : null}
-
          </div>
 
     )

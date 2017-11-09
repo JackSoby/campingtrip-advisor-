@@ -68,17 +68,7 @@ let welcomeMessage;
 
 let camps = this.state.camps.map(camp =>{
   let rating;
-  if (camp.rating <=1 ){
-    rating =<span ><div className='camp-home-rating'></div></span>
-  } else if (camp.rating <=2 ){
-    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
-  } else if (camp.rating <=3 ){
-    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
-  } else if (camp.rating <=4 ){
-    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
-  } else if (camp.rating <=5 ){
-    rating=<span><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div><div className='camp-home-rating'></div></span>
-  }
+
 let path = `/camp/${camp.id}`
   return(
     <CampTile
