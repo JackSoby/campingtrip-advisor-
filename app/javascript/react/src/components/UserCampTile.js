@@ -68,7 +68,7 @@ handlePost(formPayload){
   event.preventDefault();
     let formPayload = {
       text: this.state.userInput,
-      id: this.props.id
+      campground_id: this.props.id
    };
     if(this.state.userInput===''){
       this.setState({errorMessage: 'Please Enter a Valid Input'})

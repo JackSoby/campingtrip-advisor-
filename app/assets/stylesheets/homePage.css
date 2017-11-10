@@ -1,25 +1,28 @@
 .search-bar1{
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 250px;
+  margin-right: 250px;
   margin-top:  175px;
   min-width:200px;
 }
 input.search-bar2{
+  position: relative;
   border-radius: 4px;
+  width: 50%;
+  margin: auto;
+
 }
+.input-div{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
 h1.search-label{
    text-align: center;
    color: #000000;
    font-size: 55px;
    font-family: 'Londrina Solid', cursive;
-}
-.error-message{
-  background-color: red;
-  color: white;
-  display: flex;
-  justify-content: center;
-}
-
+  }
 
 div.grid.home-grid {
   display: flex;
@@ -40,10 +43,6 @@ div.cell.home-cell {
   text-align: center;
 }
 
-.cell.home-cell:hover{
-  background-color: #E7E1DD;
-  opacity: 0.6;
-}
 
 .yelp-image {
   position: relative;
@@ -92,9 +91,15 @@ div.cell.home-cell {
   margin-right: -25px;
 }
 input.button.button1{
+  position: relative;
+  margin: auto;
   background-color: #E7E1DD;
   border: 2px;
   font-family: 'Sumana', serif;
   color: #2A161D;
-  opacity: 0.7
+  opacity: 0.7;
+  margin-top: 5px;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }

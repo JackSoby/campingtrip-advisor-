@@ -1,4 +1,4 @@
-import React from 'reacy'
+import React from 'react'
 import CampingtripAdvisor from '../src/CampingtripAdvisor';
 import { shallow } from 'enzyme'
 
