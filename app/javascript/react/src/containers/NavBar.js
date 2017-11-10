@@ -31,7 +31,7 @@ class NavBar extends Component {
      profile =  <NavLink className='profile' to={pageLink} key={`navbar-${2}`}>Profile Page</NavLink>
    } else {
      button =<a href="/users/sign_in" className='profile'>Sign In</a>
-     profile=''
+     profile=<a href='/users/sign_up'  className='profile'>Sign Up</a>
    }
     return(
     <div>
