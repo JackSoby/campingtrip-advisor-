@@ -17,6 +17,7 @@ const NoteTitleField = (props) => {
     <div>
     <button onClick={props.handleCoordniates} className="map-button" type="submit" id='dani'name={props.lat} value={props.lng}>Map</button>
     <label onChange={props.handleChange} className='note-field'>
+
       <h5 className='note-entry-label'>{props.label}</h5>
       <input
         className={className}

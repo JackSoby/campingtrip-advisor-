@@ -86,6 +86,7 @@ let path = `/camp/${camp.id}`
   return(
     <div className='content'>
       <form className="search-bar1" onSubmit={this.handleSubmit}>
+
       <div className='search-label-div'>
       <h1 className='search-label'>Please enter a location</h1>
       </div>
@@ -95,17 +96,18 @@ let path = `/camp/${camp.id}`
             name="userInput"
             handleChange={this.handleChange}
           />
+
             <input className="button button1" type="submit" value="Submit" />
           </div>
       </form>
-      <div className="search-label-div2">
-        <div className='search-label-div3'><h1 className='campsites-near'>{welcomeMessage}</h1></div>
+        <div className="search-label-div2">
+          <div className='search-label-div3'><h1 className='campsites-near'>{welcomeMessage}</h1></div>
+        </div>
+          <h1 className='error-message'>{this.state.errorMessage}</h1>
+        <div className='grid home-grid'>
+          {camps}
+        </div>
       </div>
-        <h1 className='error-message'>{this.state.errorMessage}</h1>
-      <div className='grid home-grid'>
-        {camps}
-      </div>
-    </div>
   )
  }
 }
