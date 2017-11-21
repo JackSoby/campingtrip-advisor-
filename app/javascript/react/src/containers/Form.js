@@ -58,7 +58,7 @@ handleSubmit(event) {
 render(){
 let welcomeMessage;
    if(this.state.current_user === true && this.state.userInput === null ){
-   welcomeMessage=`Campsites near You`
+   welcomeMessage=`Campsites Near You`
 } else if (this.state.current_user === true && this.state.userInput !== null) {
   welcomeMessage=`Campsites Near ${this.state.userInput}`
 } else if (this.state.current_user === false && this.state.userInput!== null) {
@@ -86,15 +86,19 @@ let path = `/camp/${camp.id}`
   return(
     <div className='content'>
       <form className="search-bar1" onSubmit={this.handleSubmit}>
-        <div className='search-label-div'>
-          <h1 className='search-label'>Please enter a location</h1>
-        </div>
+
+      <div className='search-label-div'>
+      <h1 className='search-label'>Please enter a location</h1>
+      </div>
+      <div className='input-div'>
           <TitleField
             content={this.state.userInput}
             name="userInput"
             handleChange={this.handleChange}
           />
-        <input className="button button1" type="submit" value="Submit" />
+
+            <input className="button button1" type="submit" value="Submit" />
+          </div>
       </form>
         <div className="search-label-div2">
           <div className='search-label-div3'><h1 className='campsites-near'>{welcomeMessage}</h1></div>

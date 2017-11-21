@@ -2,10 +2,20 @@
   float: center;
   margin: 0;
   padding: 0;
-  color: silver;
+  color: #E7E1DD;
   font-family: 'Sumana', serif;
   padding-left: 25px;
   padding-right: 25px;
+}
+.field-input{
+  float: center;
+  margin: 0;
+  padding: 0;
+  color: #E7E1DD;
+  font-family: 'Sumana', serif;
+  padding-left: 25px;
+  padding-right: 800px;
+
 }
 body{
   background-repeat: no-repeat;
@@ -16,6 +26,7 @@ body{
 }
 .actions{
   padding-left: 10px;
+  color: red
 }
 .links{
 background-color: red;

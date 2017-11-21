@@ -3,17 +3,20 @@
   flex: 0 0 32%;
   background-color: #E7E1DD;
   opacity: .9;
-  width: 96%;
-  height: 100%;
-  padding-bottom: 25px;
-  margin-top: 150px;
-  margin-left: 25px;
+  width: 70%;
+  height: 80%;
+  margin:auto;
+  margin-top: 100px;
 }
 .big-name{
   font-family: 'Londrina Solid', cursive;
 }
 .message{
   font-family: 'Sumana', serif;
+}
+.show-wrapper{
+  display: flex;
+ justify-content: space-around;
 }
 #map {
   height: 200px;
@@ -38,14 +41,16 @@
 }
 
 input.button.button2{
-  background-color: #E7E1DD;
+  background-color: #96292B;
+  color:#E7E1DD;
   font-family: 'Sumana', serif;
-  color: #850000;
   opacity: 1;
   font-size: 15px;
-  padding: 10px;
   width: 7%;
   float: right;
+  margin-right: 35px;
+
+
 }
 img.show-image {
   position: relative;

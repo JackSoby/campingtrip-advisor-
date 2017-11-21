@@ -13,9 +13,7 @@
   color: #96292B;
   font-family: 'Sumana', serif;
 }
-div.dropdown{
-  background-color: red;
-}
+
 
 #note-tile{
   margin-bottom: 25px;
@@ -40,14 +38,16 @@ div.dropdown{
 }
 .user-name-div{
   margin-top: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 40px;
+  padding-bottom: 15px;
   background-color: #E7E1DD;
   opacity: 0.8;
   margin-left: -25px;
   margin-right: 0px;
+
 }
 .campsite-name{
-  margin: 0;
+  margin-top: 100px;
   padding: 0;
   color: #96292B;
   font-family: 'Sumana', serif;
@@ -64,11 +64,10 @@ div.dropdown{
 .invisible{
   visibility: hidden;
 }
-.red-note-tile {
-  border: 2px solid #5F1E27;
-}
+
 .user-camp-tile{
   margin-bottom: 10px;
+  margin-top: 10px;
   background-color: #E7E1DD;
   text-align: center;
 }
@@ -86,12 +85,16 @@ div.dropdown{
   padding-right: 10px;
 }
 .button.note-submit-button{
+  float: right;
   text-align: center;
-  margin-right: 100px;
-  background-color: #E7E1DD;
-  color: #96292B;
+  background-color: #96292B;
+  color:#E7E1DD;
   font-family: 'Sumana', serif;
-  margin-left: 10px
+  font-size: 12px;
+  padding: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  opacity: .8;
 }
 .visible{
   background-color: #E7E1DD;
@@ -107,20 +110,35 @@ div.dropdown{
 .visible:focus{
     background-color: #E7E1DD;
 }
-.note-button{
-  background-color: #E7E1DD;
-  padding: 0;
-  margin-left: 10px;
-  color: #96292B;
+.map-button{
+  float: right;
+  text-align: center;
+  background-color: #96292B;
+  color:#E7E1DD;
   font-family: 'Sumana', serif;
+  font-size: 12px;
+  padding: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  opacity: .8;
+}
+.map-button:hover{
+  background-color: #96292B;
+}
+.map-button:focus{
+    background-color: #96292B;
+
+}
+.note-button{
+  display: none;
 }
 .note-button:hover{
-  background-color: #E7E1DD;
+  background-color: gray;
   color: #96292B;
 
 }
 .note-button:focus{
-  background-color: #E7E1DD;
+  background-color: gray;
 }
 .dropdown .notes{
 padding-bottom: 1px;
@@ -129,6 +147,25 @@ padding-bottom: 1px;
   display: block;
 }
 input.edit-note{
-  background-color: #96292B;
+  background-color: gray;
   opacity: 0.8
+}
+#dani{
+  padding-top: 0;
+}
+
+#note-tile:hover .note-button{
+  display:inline-block;
+  background-color: #E7E1DD;
+  color: #96292B;
+  opacity: .8;
+  font-family: 'Sumana', serif;
+  padding: 15px;
+  padding-top: 3px;
+  padding-bottom: 0px;
+}
+
+button, input[type=submit] {
+  line-height: inherit;
+  padding: 1em;
 }

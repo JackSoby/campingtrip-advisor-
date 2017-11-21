@@ -88,18 +88,21 @@ handleCampSubmit(event){
   render(){
     let rating;
     if (this.state.rating <=1 ){
-     rating =<div className='camp-rating'></div>
+     rating =<div className='rating-wrapper'><div className='camp-rating'></div></div>
    } else if (this.state.rating <=2 ){
-     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+     rating=<div className='rating-wrapper'><div className='camp-rating'></div><div className='camp-rating'></div></div>
    } else if (this.state.rating <=3 ){
-     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+     rating=<div className='rating-wrapper'><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
    } else if (this.state.rating <=4 ){
-     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+     rating=<div className='rating-wrapper'><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
    } else if (this.state.rating <=5 ){
-     rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
+     rating=<div className='rating-wrapper'><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
    }
     return(
-        <div className='cell show-cell'>
+
+      <div className='show-wrapper'>
+        <div className='show-cell'>
+
           {(this.state.lat && this.state.lng) ? <CampShowTile
             lng={this.state.lng}
             lat={this.state.lat}
@@ -117,6 +120,7 @@ handleCampSubmit(event){
             button={this.button}
            /> : null}
          </div>
+        </div>
     )
   }
 }
