@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CampShowTile from '../components/CampShowTile'
-
+import 'whatwg-fetch'
 
 class CampShow extends Component{
   constructor(props){
@@ -99,7 +99,6 @@ handleCampSubmit(event){
      rating=<div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
    }
     return(
-
         <div className='cell show-cell'>
           {(this.state.lat && this.state.lng) ? <CampShowTile
             lng={this.state.lng}
@@ -118,7 +117,6 @@ handleCampSubmit(event){
             button={this.button}
            /> : null}
          </div>
-
     )
   }
 }

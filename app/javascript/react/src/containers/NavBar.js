@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom'
+import 'whatwg-fetch'
 
 class NavBar extends Component {
   constructor(props) {
