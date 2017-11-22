@@ -12,7 +12,7 @@ describe('NavBar', () => {
     )
   })
 
-  it('should render two div elements', () => {
+  it('should render two div element', () => {
     expect(wrapper.find('div').length).toEqual(2)
   })
 
