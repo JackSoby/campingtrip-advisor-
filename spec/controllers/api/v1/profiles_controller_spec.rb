@@ -12,9 +12,10 @@ RSpec.describe Api::V1::ProfilesController, type: :controller do
       get :index
     end
 
-    it "should create return a array of notes" do
+    it "should create return a respomse status of 302" do
       expect(response.status).to eq 302
     end
+
 
 
   end
