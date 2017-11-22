@@ -11,10 +11,10 @@ describe('Form', () => {
       <Form/>
     )
   })
-  it('should render five div elements', () => {
-    expect(wrapper.find('div').length).toEqual(5)
+  it('should render 6 div elements', () => {
+    expect(wrapper.find('div').length).toEqual(6)
   })
-  
+
   it('should render three h1 elements', () => {
     expect(wrapper.find('h1').length).toEqual(3)
   })
