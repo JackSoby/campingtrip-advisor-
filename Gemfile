@@ -26,6 +26,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'rspec-rails'
   gem 'rspec-when'
+  gem "factory_bot_rails", "~> 4.0"
 end
 
 group :development do
@@ -36,6 +37,5 @@ group :development do
 end
 
   gem 'pg'
-
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
