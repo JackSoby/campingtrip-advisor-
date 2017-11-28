@@ -22,7 +22,7 @@ rails s
 In a separate terminal window, run:
 ```
 yarn install
-yarn start
+./bin/webpack-dev-server
 ```
 
 ## Ideas
