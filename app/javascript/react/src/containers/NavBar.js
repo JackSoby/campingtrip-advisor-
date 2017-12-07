@@ -13,7 +13,7 @@ class NavBar extends Component {
   }
 
   componentDidMount() {
-    fetch(`/api/v1/members`,
+    fetch(`/api/v1/members.json`,
     {method: 'GET', redirect: 'follow',
     credentials: "same-origin",
     headers: {"Content-Type": "application/json"}
