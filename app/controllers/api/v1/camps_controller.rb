@@ -23,6 +23,6 @@ class Api::V1::CampsController < ApplicationController
          message = 'You already saved this Campsite'
         render json: { message: message }
       end
-   end
+    end
   end
 end

@@ -43,13 +43,13 @@ componentDidMount(){
       headers: {"Content-Type": "application/json"}})
       .then(response => response.json())
       .then(body => {
-            this.setState({signedIn: body.signed_in})
-            this.button=''
-        if (this.state.signedIn === true ){
-          this.button = <input onClick={this.handleCampSubmit} className="button button2" type="submit" value="Save" />
-        }else{
-          let button ='Sign in to save a campground.'
-      }
+        this.setState({signedIn: body.signed_in})
+        this.button=''
+          if (this.state.signedIn === true ){
+            this.button = <input onClick={this.handleCampSubmit} className="button button2" type="submit" value="Save" />
+          }else{
+            let button ='Sign in to save a campground.'
+        }
     })
  }
 
@@ -99,10 +99,8 @@ handleCampSubmit(event){
      rating=<div className='rating-wrapper'><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div><div className='camp-rating'></div></div>
    }
     return(
-
       <div className='show-wrapper'>
         <div className='show-cell'>
-
           {(this.state.lat && this.state.lng) ? <CampShowTile
             lng={this.state.lng}
             lat={this.state.lat}

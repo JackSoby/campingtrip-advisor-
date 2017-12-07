@@ -37,6 +37,7 @@ componentDidMount() {
   })
     .then(response => response.json())
     .then(body => {
+      debugger
       this.setState({notes: body})
     })
   }
