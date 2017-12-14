@@ -30,7 +30,6 @@ class ProfilePage extends Component {
         this.setState({id: body.id, campgrounds: body.campgrounds, first_name: body.first_name, last_name: body.last_name, fullname: `${body.first_name} ${body.last_name}`})
     })
     this.buildMap()
-
   }
 
   buildMap(){
@@ -58,7 +57,6 @@ handleCoordniates(event){
     this.buildMap()
 }
   render(){
-
     let mapName;
     if (this.state.lng === null && this.state.lat === null){
       mapName='hidden-map'
