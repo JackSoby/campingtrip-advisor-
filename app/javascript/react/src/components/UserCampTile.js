@@ -152,28 +152,28 @@ handleEditFetch(editPayLoad){
 
 
   return (
-<div className='dropdown'>
-  <div className='user-camp-tile'>
-    <NavLink className='campsite-name' to={this.props.path}>
-      {this.props.name}
-    </NavLink>
-  </div>
-  <div className='notes'>
-    <NoteTitleField
-      lat={this.props.lat}
-      lng={this.props.lng}
-      handleCoordniates={this.props.handleCoordniates}
-      editButton={this.state.edit}
-      handleSubmit={this.handleSubmit}
-      handleEditSubmit={this.handleEditSubmit}
-      content={this.state.userInput}
-      label="Enter Notes Here"
-      name="userInput"
-      handleChange={this.handleChange}
-    />
-    <p>{notes}</p>
-  </div>
-</div>
+    <div className='dropdown'>
+      <div className='user-camp-tile'>
+        <NavLink className='campsite-name' to={this.props.path}>
+          {this.props.name}
+        </NavLink>
+      </div>
+      <div className='notes'>
+        <NoteTitleField
+          lat={this.props.lat}
+          lng={this.props.lng}
+          handleCoordniates={this.props.handleCoordniates}
+          editButton={this.state.edit}
+          handleSubmit={this.handleSubmit}
+          handleEditSubmit={this.handleEditSubmit}
+          content={this.state.userInput}
+          label="Enter Notes Here"
+          name="userInput"
+          handleChange={this.handleChange}
+        />
+        <p>{notes}</p>
+      </div>
+    </div>
   );
  }
 }
