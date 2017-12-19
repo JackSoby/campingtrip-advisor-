@@ -34,21 +34,21 @@ componentDidMount(){
        body: JSON.stringify(campParams)
     })
      .then(response =>  response.json())
-     .then(body =>{
-       this.setState({ lng: body.coordinates.longitude, lat: body.coordinates.latitude, image: body.image_url, name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
+       .then(body =>{
+         this.setState({ lng: body.coordinates.longitude, lat: body.coordinates.latitude, image: body.image_url, name: body.name, phone: body.display_phone, rating: body.rating, address: body.location.address1, city: body.location.city, country: body.location.country, state: body.location.state, zip: body.location.zip_code, id: body.id})
     })
     fetch(`/api/v1/members.json`,
       {method: 'GET', redirect: 'follow',
-      credentials: "same-origin",
-      headers: {"Content-Type": "application/json"}})
+        credentials: "same-origin",
+        headers: {"Content-Type": "application/json"}})
       .then(response => response.json())
-      .then(body => {
-        this.setState({signedIn: body.signed_in})
-        this.button=''
-          if (this.state.signedIn === true ){
-            this.button = <input onClick={this.handleCampSubmit} className="button button2" type="submit" value="Save" />
-          }else{
-            let button ='Sign in to save a campground.'
+        .then(body => {
+          this.setState({signedIn: body.signed_in})
+          this.button=''
+            if (this.state.signedIn === true ){
+              this.button = <input onClick={this.handleCampSubmit} className="button button2" type="submit" value="Save" />
+            }else{
+              let button ='Sign in to save a campground.'
         }
     })
  }
@@ -60,11 +60,11 @@ componentDidMount(){
     method: 'POST',
     headers: {"Content-Type": 'application/json'},
     body: JSON.stringify(formPayload)
-   })
-   .then(response =>  response.json())
-   .then(body =>{
-    this.setState({message: body.message})
   })
+   .then(response =>  response.json())
+    .then(body =>{
+      this.setState({message: body.message})
+    })
  }
 
 handleCampSubmit(event){

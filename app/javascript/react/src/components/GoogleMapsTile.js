@@ -10,10 +10,11 @@ class GoogleMapsTile extends Component {
  this.initMap=this.initMap.bind(this)
 }
 
-  componentDidMount() {
-         window.initMap = this.initMap;
-         loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDXs__DvSrweKmRBGuM9m0R40EvO9FkQEg&callback=initMap')
-     }
+componentDidMount() {
+    window.initMap = this.initMap;
+    loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyDXs__DvSrweKmRBGuM9m0R40EvO9FkQEg&callback=initMap')
+   }
+
 initMap() {
   let map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,

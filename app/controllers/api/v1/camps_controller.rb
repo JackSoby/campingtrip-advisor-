@@ -1,6 +1,5 @@
 class Api::V1::CampsController < ApplicationController
   skip_before_action :verify_authenticity_token
-
         def create
            camp_test = Campground.where(name: params[:name])
           if camp_test.empty?
