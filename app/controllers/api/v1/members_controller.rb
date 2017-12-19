@@ -4,8 +4,8 @@ class Api::V1::MembersController < ApplicationController
 
   def index
    member = { signed_in: user_signed_in?, id: current_user.id}
-     if user_signed_in?
-       render json: member
-     end
+    if user_signed_in?
+     render json: member
+    end
   end
 end
