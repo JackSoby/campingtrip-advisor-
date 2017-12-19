@@ -57,10 +57,10 @@ handlePost(formPayload){
       body: JSON.stringify(formPayload)
    })
     .then(response =>  response.json())
-    .then(body =>{
-      if (body === null){
-        this.setState({errorMessage: "Please Fill out the Form."})
-      } else {
+      .then(body =>{
+        if (body === null){
+          this.setState({errorMessage: "Please Fill out the Form."})
+        } else {
          this.setState({ notes: [...this.state.notes, body], errorMessage: '' })
       }
     })
@@ -73,7 +73,7 @@ handlePost(formPayload){
    };
     if(this.state.userInput===''){
       this.setState({errorMessage: 'Please Enter a Valid Input'})
-    }else{
+    } else {
     this.handlePost(formPayload);
     this.handleFormClear()
   }
@@ -89,13 +89,13 @@ handlePost(formPayload){
 
 handleDestroy(deletePayLoad){
   fetch(`/api/v1/notes/${this.props.id}`, {
-  credentials: 'same-origin',
-  method: 'delete',
-  headers: {"Content-Type": 'application/json'},
-  body: JSON.stringify(deletePayLoad)
+      credentials: 'same-origin',
+      method: 'delete',
+      headers: {"Content-Type": 'application/json'},
+      body: JSON.stringify(deletePayLoad)
   })
   .then(response =>  response.json())
-  .then(body =>{
+    .then(body =>{
       this.setState({notes: body})
   })
 }
@@ -113,18 +113,18 @@ handleDestroy(deletePayLoad){
 
   handleEdit(event){
     event.preventDefault();
-    let value=event.target.value
-    let id = event.target.name
-      this.setState({userInput: value, edit: true, targetedId: id, noteTile: true})
+        let value=event.target.value
+        let id = event.target.name
+          this.setState({userInput: value, edit: true, targetedId: id, noteTile: true})
   }
 
 
 handleEditFetch(editPayLoad){
   fetch(`/api/v1/notes/${this.props.id}`, {
-  credentials: 'same-origin',
-  method: 'PATCH',
-  headers: {"Content-Type": 'application/json'},
-  body: JSON.stringify(editPayLoad)
+    credentials: 'same-origin',
+    method: 'PATCH',
+    headers: {"Content-Type": 'application/json'},
+    body: JSON.stringify(editPayLoad)
  })
 .then(response =>  response.json())
   .then(body =>{
@@ -134,10 +134,10 @@ handleEditFetch(editPayLoad){
 }
   handleEditSubmit(event){
     event.preventDefault();
-    let editPayLoad={
-      note_text: this.state.userInput,
-      note_id: this.state.targetedId
-    }
+      let editPayLoad={
+        note_text: this.state.userInput,
+        note_id: this.state.targetedId
+      }
    this.handleEditFetch(editPayLoad)
    this.handleFormClear()
   }
