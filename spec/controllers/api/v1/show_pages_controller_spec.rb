@@ -13,12 +13,7 @@ RSpec.describe Api::V1::ShowPagesController, type: :controller do
     end
 
     it "should create return a array of notes" do
-  
       expect(response.status).to eq 200
-
     end
-
-
-
   end
 end
