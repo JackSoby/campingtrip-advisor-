@@ -1,5 +1,6 @@
 class Api::V1::HomesController < ApplicationController
 skip_before_action :verify_authenticity_token
+
    def index
      state = (current_user.location)
      response = HTTParty.get("https://api.yelp.com/v3/businesses/search?term=camping+parks&location=#{state}",
